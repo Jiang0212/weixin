@@ -1,0 +1,94 @@
+<xml>
+	<!-- ToUserName 开发者微信号 FromUserName 发送方帐号（一个OpenID） CreateTime 消息创建时间 （整型） 
+		单位是秒 MsgType 消息类型，文本为text Content 文本消息内容 MsgId 消息id，64位整型 -->
+	<ToUserName><![CDATA[gh_ee4bf5e34241]]></ToUserName>
+	<FromUserName><![CDATA[oeGVqwqHwQr05vt0K42KCyc0DxY4]]></FromUserName>
+	<CreateTime>1577284804</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[[Facepalm]]]></Content>
+	<MsgId>22581291818999493</MsgId>
+
+
+
+<!-- 	{MediaId=d4HlT3lt8IL5V_j2zTzsXc9_iyDhVrUPyvdMzZgKTr4xenTdF9HSVpNlhE9LRMmj,
+	CreateTime=1577337651, ToUserName=gh_ee4bf5e34241,
+	FromUserName=oeGVqwqHwQr05vt0K42KCyc0DxY4, MsgType=image,
+	PicUrl=http://mmbiz.qpic.cn/mmbiz_jpg/dI0tY2qxvKmP1benwk5bfiar6X50CNVGFxP5OcfibuEaNKxGkguqwSviaS1Obdtp4UVZvD04GFUplCdv8eC9eGvrg/0,
+	MsgId=22582048575339685} 
+	
+{"button":[
+{"name":"一级跳转","type":"click","key":"1"},
+{"name":"一级跳转","type":"view","url":"http://www.baidu.com"},
+{"name":"有子菜单","sub_button":[
+{"name":"传图","sub_button":[],"type":"pic_photo_or_album","key":"31"},
+{"name":"点击","type":"click","key":"32"},
+{"name":"网易新闻","type":"view","url":"http://news.163.com"}]}]}
+
+{MediaId=MgR-M-K59JvuFyj8Vmqh2x1SJVAFXQfq47wAQ9mt4RJ8peeLTsZAYROelEWD08RM, 
+CreateTime=1577366581, 
+ToUserName=gh_ee4bf5e34241,
+ FromUserName=oeGVqwqHwQr05vt0K42KCyc0DxY4, 
+ MsgType=image, 
+ PicUrl=http://mmbiz.qpic.cn/mmbiz_jpg/dI0tY2qxvKmP1benwk5bfiar6X50CNVGFpQiadriaJJXjD1nKmvxXU5IXOy1pkZNvMK4Et6YFrk8U4iajgDzKwR2DQ/0,
+ MsgId=22582457835024410}
+
+	
+	{
+           "touser":"oeGVqwqHwQr05vt0K42KCyc0DxY4",
+           "template_id":"pfzLw4yrrdIVV_N2iAAYzN80em3eK6kLP4209Ve5_98 ",
+           "url":"http://baidu.com",        
+           "data":{
+                   "first": {
+                       "value":"您有新的反馈信息！",
+                       "color":"#1f1f1f"
+                   },
+                   "company":{
+                       "value":"江城公司",
+                       "color":"#2c2c2c"
+                   },
+                   "time": {
+                       "value":"2019-12-25",
+                       "color":"#3c3c3c"
+                   },
+                   "result": {
+                       "value":"面试通过",
+                       "color":"#3c3c3c"
+                   },
+                   "remark":{
+                       "value":"请联系我们人事！",
+                       "color":"#4d4d4d"
+                   }
+           }
+       }
+		
+
+{"expire_seconds": 6000, 
+"action_name": "QR_STR_SCENE",
+"action_info": 
+	{"scene": 
+		{"scene_str": "jiang"}}}
+
+
+{Ticket=gQG47zwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyS0FTa2tHVUJkRzIxMzlNN3h1YzIAAgRZGQdeAwRwFwAA, 
+CreateTime=1577523734, 
+EventKey=qrscene_jiang, 
+Event=subscribe,
+ToUserName=gh_ee4bf5e34241,
+FromUserName=oeGVqwgNDqzAhpfg94LwGUqAsSVM,
+MsgType=event}
+
+
+{ScanCodeInfo=qrcode
+https://u.wechat.com/MHtPSbgBKpB4CeU7cMNNu2o,
+CreateTime=1577528830, 
+EventKey=1, 
+Event=scancode_push, 
+ToUserName=gh_ee4bf5e34241,
+FromUserName=oeGVqwqHwQr05vt0K42KCyc0DxY4,
+MsgType=event}
+	-->
+
+</xml>
+
+
+

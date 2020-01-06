@@ -1,0 +1,190 @@
+/**header**/
+.am-header {
+    background: #ff4d4d;
+    box-shadow: rgba(0,0,0,.13) 1px 1px 3px;
+    height: 44px;
+    position: relative;
+    z-index: 1;
+}
+.am-header .btn {
+   min-width: 44px;
+   height: 44px;
+   position: absolute;
+   top: 0;
+   line-height: 44px;
+   text-align: center;
+   font-size: 18px;
+   color: #ff5961;
+}
+.am-header .am-backbuttton i {
+   display: block;
+   margin: 12px auto;
+   width: 13px;
+   height: 20px;
+   background: url(../images/hotel_icon.png) no-repeat center center;
+   background-size: 400px 400px;
+   background-position: -93px -105.2px;
+}
+.rightBut {
+   top: 0;
+   float: right;
+   margin-right: 15px;
+   width: 20%;
+}
+.am-heder .right {
+   right: 0;
+}
+.am-header .right a {
+   font-size: 16px;
+   color: #fff;
+   margin-right: 15px;
+}
+.am-header p {
+   width: 50%;
+   margin: 0 auto;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   text-align: center;
+   height: 44px;
+   line-height: 44px;
+   font-size: 21px;
+   color: #fff;
+}
+/**main**/
+#main {
+   position: relative;
+   height: 100%;
+}
+.am-widthLimite {
+   margin: 0 auto;
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: #fff;
+}
+.hotel_list_box {
+   padding: 0px 10px 50px 10px;
+}
+.hotel_list_ul li {
+   border-bottom: 1px solid #dedede;
+   position: relative;
+   padding: 10px 0;
+}
+.hotel_list_ul li .hl_pic {
+   position: absolute;
+   width: 82px;
+   height: 82px;
+}
+.hotel_list_ul li .hl_pic img {
+   width: 82px;
+   height: 82px;
+}
+.hotel_list_ul li .hl_text {
+   padding-left: 92px;
+   position: relative;
+   height: 82px;
+}
+.hl_tl_left {
+   width: 100%;
+}
+.hl_name {
+   display: block;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   line-height: 18px;
+   height: 18px;
+}
+.hl_comment {
+   line-height: 1.5;
+   height: 28px;
+}
+.integer {
+   font-size: 19px;
+   font-style: italic;
+   font-weight: 600;
+}
+.decimal {
+   font-size: 12px;
+   font-style: italic;
+   font-weight: 600;
+   margin-left: -6px;
+}
+.hl_icons {
+   line-height: 1;
+   margin-bottom: 3px;
+   height: 18px;
+}
+.hl_icons .icon_small {
+   margin-right: 4px;
+}
+.icon_small {
+   display: inline-block;
+   width: 16px;
+   height: 16px;
+   background: url(../images/wx_icon_small_default.png) no-repeat center center;
+   background-size: 16px 421px;
+   vertical-align: middle;
+}
+.wifi {
+   background-position: 0px 0px;
+}
+.tingchechang {
+   background-position: 0px -47.6px;
+   height: 17px;
+}
+.huiyishi {
+   background-position: 0px -129.6px;
+}
+.jiejifuwu {
+   background-position: 0px -64.8px;
+}
+.chuifengji {
+   background-position: 0px -356.6px;
+   height: 15px;
+}
+.canyin {
+   background-position: 0px -388.8px;
+}
+.hl_distance {
+   margin-top: 5px;
+   height: 15px;
+}
+.hl_address {
+   display: inline-block;
+   max-width: 60px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   vertical-align: bottom;
+}
+.hl_tl_right {
+   position: absolute;
+   right: 0;
+   top: 50%;
+   margin-top: -12px;
+}
+/**footer**/
+.botFilter {
+   position: fixed;
+   width: 100%;
+   background-color: #f4f4f4;
+   opacity: .94;
+   z-index: 102;
+   bottom: 0;
+   left: 0;
+   border-top: 1px solid #d4d4d4;
+}
+.botFilter ul {
+   background-color: transparent;
+   display: -webkit-box;
+   text-align: center;
+}
+.botFilter ul li {
+   -webkit-box-flex: 1;
+   box-sizing: border-box;
+   padding: 15px 0;
+}
