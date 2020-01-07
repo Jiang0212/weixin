@@ -25,6 +25,8 @@ public class Redirect extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = request.getParameter("url");
 		url = URLDecoder.decode(url, "UTF-8" );
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
 		Map<String, String> ret = WxJSUtil.sign(url);
 		JSONObject jsonObject = JSONObject.fromObject(ret);
 		jsonObject.put("appId",wxService.APPID);

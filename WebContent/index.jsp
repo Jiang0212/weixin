@@ -19,13 +19,8 @@
 	background: #e0ffff;
 	text-align: center;
 }
-
-.menu {
-	width: 50%;
-	height: 150px;
-}
 </style>
-<script type="text/javascript" src="jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 <!-- 引入 WeUI -->
 <link rel="stylesheet"
 	href="https://res.wx.qq.com/open/libs/weui/2.1.3/weui.min.css">
@@ -35,19 +30,19 @@
 </head>
 <body ontouchstart>
 	<div class="header">广告区</div>
-	<div class="main">
-		<div class="menu">
+	<div class="weui-flex">
+		<div class="weui-flex__item">
 			<a href="manager.jsp"><img src="images/icon_nav_special.png"><br>
 				<span>商品管理</span></a>
 		</div>
-		<div class="menu">
+		<div class="weui-flex__item">
 			<a href="scan.jsp"><img src="images/icon_nav_special.png"><br>
 				<span>商品扫描</span></a>
 		</div>
-		<div class="menu">
-			<a href="news.jsp"><img src="images/icon_nav_special.png"><br>
-				<span>消息中心</span></a>
-		</div>
+	</div>
+	<div class="weui-flex">
+		<a href="news.jsp"><img src="images/icon_nav_special.png"><br>
+			<span>消息中心</span></a>
 	</div>
 	</div>
 	<div class="weui-footer weui-footer_fixed-bottom">
