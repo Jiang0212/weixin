@@ -1,11 +1,9 @@
 package servlet;
 
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,30 +11,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import dao.GoodsDao;
+import dao.impl.GoodsDaoImpl;
+import domain.Goods;
 import net.sf.json.JSONObject;
+import service.GoodsService;
+import service.impl.GoodsServiceImpl;
+import util.DateCal;
 
 @WebServlet("/ActionScan")
 public class ActionScan extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	GoodsService goodserv = new GoodsServiceImpl();
+	DateCal datecal = new DateCal();
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		JSONObject jsonObject = new JSONObject();
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("application/json");
-		String qrCode = request.getParameter("qrcode");
-		if("CODE_128,kasjd5465465".equals(qrCode)) {
-			jsonObject.put("msg", "1");
-			jsonObject.put("id", "1215646555");
-			jsonObject.put("name", "脆脆鲨");
-			jsonObject.put("price", "14.5元/个");
-			jsonObject.put("begintime", "2019-09-01T16:12:00");
-			jsonObject.put("overtime", "2020-03-01T16:12:00");
-			jsonObject.put("mark", "这是测试商品！");
+		String[] qrcode = request.getParameter("qrcode").split(",");
+		Goods good = goodserv.findgoods(qrcode[1]);
+		if (good == null) {
+			jsonObject.put("msg", "0");
 			response.getWriter().write(jsonObject.toString());
 		}else {
-			jsonObject.put("msg", "0");
+			jsonObject = JSONObject.fromObject(goodserv.toMap(good));
+			jsonObject.put("day", datecal.calDate((String)jsonObject.get("validTime")));
+			jsonObject.put("msg", "1");
+			System.out.println("yes");
 			response.getWriter().write(jsonObject.toString());
 		}
 		
@@ -44,20 +48,38 @@ public class ActionScan extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		 * String qrCode = request.getParameter("qrCode");
-		 * request.setCharacterEncoding("utf-8");
-		 * response.setCharacterEncoding("utf-8"); String[] code = qrCode.split(",");
-		 * System.out.println(qrCode); Map<String, String> product = new HashMap<String,
-		 * String>(); product.put("id", "1215646555"); product.put("name", "脆脆鲨");
-		 * product.put("price", "14.5元/个"); product.put("begintime",
-		 * LocalDateTime.now().format(DateTimeFormatter.ISO_DATE));
-		 * product.put("overtime",
-		 * LocalDateTime.now().format(DateTimeFormatter.ISO_DATE)); product.put("mark",
-		 * "这是测试商品！"); request.setAttribute("product", product);
-		 * request.getRequestDispatcher("scan.jsp").forward(request, response);
-		 */
-		request.getRequestDispatcher("validateSuccess.jsp").forward(request, response);
+		JSONObject jsonObject = new JSONObject();
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("application/json");
+		Goods good = new Goods();
+		good.setId(request.getParameter("id"));
+		good.setName(request.getParameter("name"));
+		good.setSize(request.getParameter("size"));
+		String day = request.getParameter("day");
+		good.setValidTime(request.getParameter("validTime"));
+		if(day=="" || day == null) {
+			good.setDay(datecal.calDate(good.getValidTime())+"");
+		}else {
+			good.setDay(day);
+		}
+		good.setUnit(request.getParameter("unit"));
+		System.out.println(good.toString());
+		if (goodserv.updategoods(good)<1) {
+			if (goodserv.addgoods(good)<1){
+				jsonObject.put("msg", "0");
+				System.out.println(0);
+				response.getWriter().write(jsonObject.toString());
+			}
+			else {
+				jsonObject.put("msg", "1");
+				System.out.println(1);
+				response.getWriter().write(jsonObject.toString());
+			}
+		}else {
+			jsonObject.put("msg", "1");
+			System.out.println(1);
+			response.getWriter().write(jsonObject.toString());
+		}
 	}
 
 }

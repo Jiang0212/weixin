@@ -38,7 +38,7 @@ public class wxservlet extends HttpServlet {
 			out.flush();
 			out.close();
 		}else {
-			System.out.println("接入成功");
+			System.out.println("接入失败");
 		}
 	}
 	
@@ -71,7 +71,7 @@ public class wxservlet extends HttpServlet {
 		String respxml =wxService.getResponse(requestMap);
 		System.out.println(respxml);
 		PrintWriter out = response.getWriter();
-		out.write(respxml);
+		//out.write(respxml);
 		out.flush();
 		out.close();
 	}

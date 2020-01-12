@@ -3,53 +3,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width,initial-scale=1,user-scalable=0">
-<title>功能界面</title>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-}
+<!-- 页面meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>首页</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta
+	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+	name="viewport">
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/AdminLTE.css">
+<link rel="stylesheet" href="css/_all-skins.min.css">
+</head>
+<body class="hold-transition skin-purple sidebar-mini">
+	<div class="wrapper">
+		<!-- 页面头部 -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="index.jsp" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini"><b>商家</b></span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>商家</b>小助手</span>
+			</a>
+		</header>
+		<!-- 页面头部 /-->
 
-.header {
-	height: 50px;
-	width: 100%;
-	background: #e0ffff;
-	text-align: center;
-}
-</style>
-<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-<!-- 引入 WeUI -->
-<link rel="stylesheet"
-	href="https://res.wx.qq.com/open/libs/weui/2.1.3/weui.min.css">
-</head>
-<!-- 引入js文件 -->
-<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
-</head>
-<body ontouchstart>
-	<div class="header">广告区</div>
-	<div class="weui-flex">
-		<div class="weui-flex__item">
-			<a href="manager.jsp"><img src="images/icon_nav_special.png"><br>
-				<span>商品管理</span></a>
+		<!-- 内容区域 -->
+		<div class="content-wrapper">
+
+			<!-- 内容头部 -->
+			<section class="content-header">
+				<ol class="breadcrumb">
+						<li>
+							<a href="index.jsp"><i class="fa fa-dashboard"></i> 首页</a>
+						</li>
+					</ol>
+			</section>
+			<!-- 内容头部 /-->
+
+			<!-- 菜单区域 -->
+			<section class="content">
+
+				<!-- 菜单列表 -->
+				<div class="row">
+					<!-- ./col -->
+					<div class="col-lg-3 col-xs-6">
+						<!-- small box -->
+						<div class="small-box bg-aqua">
+							<div class="inner"></div>
+							<div class="inner">
+								<p style="font-size: 30px; font-weight: bold;"><a href="manager.jsp" style="color: white;">商品信息</a></p>
+							</div>
+							<a href="manager.jsp" class="small-box-footer">详细 <i
+								class="fa fa-arrow-circle-right"></i>
+							</a>
+						</div>
+					</div>
+					<!-- ./col -->
+					<div class="col-lg-3 col-xs-6">
+						<!-- small box -->
+						<div class="small-box bg-orange">
+							<div class="inner"></div>
+							<div class="inner">
+								<p style="font-size: 30px; font-weight: bold;"><a href="scan.jsp" style="color: white;">商品入库</a></p>
+							</div>
+							<a href="scan.jsp" class="small-box-footer">详细 <i
+								class="fa fa-arrow-circle-right"></i>
+							</a>
+						</div>
+					</div>
+					<!-- ./col -->
+					<div class="col-lg-3 col-xs-6">
+						<!-- small box -->
+						<div class="small-box bg-red">
+							<div class="inner">
+								<span
+									style="float: right; margin-right: -10px; margin-top: -10px;"
+									class="label label-warning"><i class="fa fa-bell"></i>10</span>
+							</div>
+							<div class="inner">
+								<p style="font-size: 30px; font-weight: bold;"><a href="news.jsp" style="color: white;">消息中心</a></p>
+							</div>
+							<a href="news.jsp" class="small-box-footer">详细 <i
+								class="fa fa-arrow-circle-right"></i>
+							</a>
+						</div>
+					</div>
+					<!-- ./col -->
+				</div>
+				<!-- /.row -->
+			</section>
+			<!-- 正文区域 /-->
 		</div>
-		<div class="weui-flex__item">
-			<a href="scan.jsp"><img src="images/icon_nav_special.png"><br>
-				<span>商品扫描</span></a>
-		</div>
+		<!-- 内容区域 /-->
+
+		<!-- 底部导航 -->
+		<footer class="main-footer" style="text-align: center;">
+			<div>
+				<strong><a href="index.jsp">首页</a></strong>
+			</div>
+			<div class="pull-right hidden-xs">
+				<b>Jiang Version</b> 1.0.0
+			</div>
+			<strong>Copyright &copy; 2020 <a href="index.jsp">Jiang</a></strong>
+		</footer>
+		<!-- 底部导航 /-->
+
 	</div>
-	<div class="weui-flex">
-		<a href="news.jsp"><img src="images/icon_nav_special.png"><br>
-			<span>消息中心</span></a>
-	</div>
-	</div>
-	<div class="weui-footer weui-footer_fixed-bottom">
-		<p class="weui-footer__links">
-			<a href="index.jsp" class="weui-footer__link">首页</a>
-		</p>
-		<p class="weui-footer__text">Copyright © 2019 Jiang</p>
-	</div>
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/fastclick.min.js"></script>
+	<script src="js/app.min.js"></script>
 </body>
 </html>
+<!---->
