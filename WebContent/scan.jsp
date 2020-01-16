@@ -26,6 +26,12 @@
 <link rel="stylesheet" href="css/AdminLTE.css">
 <link rel="stylesheet" href="css/_all-skins.min.css">
 <link rel="stylesheet" href="css/style.css">
+<%
+	if(application.getAttribute("markid")==null){
+		request.setAttribute("msg", "账号身份已过期，请重新登陆！");
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+	}
+%>
 </head>
 
 <script src="js/jquery-2.2.3.min.js"></script>
@@ -62,6 +68,7 @@
 					success : function(res) {
 					}
 				});
+				var markid = $("#markid").val();
 				//点击按钮扫描二维码
 				document.querySelector('#scanQRCode').onclick = function() {
 					wx
@@ -69,15 +76,16 @@
 								needResult : 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
 								scanType : [ "qrCode", "barCode" ], // 可以指定扫二维码还是一维码，默认二者都有
 								success : function(res) {
-									// 扫码成功，跳转到二维码指定页面（res.resultStr为扫码返回的结果）            
+									// 扫码成功  res.resultStr为扫码返回的结果            
 									var scan = res.resultStr;
 									if (scan.indexOf(",") != -1) {
 										$
 												.ajax({
 													type : "get",
-													url : "ActionScan",
+													url : "findoneServlet",
 													data : {
-														"qrcode" : scan
+														"qrcode" : scan,
+														"markid" : markid
 													},
 													success : function(result) {
 														if (result.msg == 1) {
@@ -119,7 +127,7 @@
 			//几个参数需要注意一下
 			type : "POST",//方法类型，或者用GET
 			dataType : "json",//预期服务器返回的数据类型，可以改成json
-			url : "http://jiang.nat300.top/weixin/ActionScan",//ip:端口/项目名称/Servlet名称
+			url : "addGoodsServlet",//ip:端口/项目名称/Servlet名称
 			data : $('#form1').serialize(),//获取表单里的数据到这里
 			success : function(res) {
 				if (res.msg == 0) {
@@ -138,12 +146,13 @@
 			<!-- Logo -->
 			<a href="index.jsp" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>商家</b></span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>商家</b>小助手</span>
+				<span class="logo-lg"><b>${applicationScope.market}商家</b>小助手</span>
 			</a>
 		</header>
 		<!-- 页面头部 /-->
 		<!-- 内容区域 -->
 		<div class="content-wrapper">
+			<input type="hidden" id="markid" class="markid" value="${applicationScope.markid}">
 			<!-- 内容头部 -->
 			<section class="content-header">
 				</h1>

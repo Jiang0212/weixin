@@ -19,6 +19,12 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/AdminLTE.css">
 <link rel="stylesheet" href="css/_all-skins.min.css">
+<%
+	if(application.getAttribute("markid")==null){
+		request.setAttribute("msg", "账号身份已过期，请重新登陆！");
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+	}
+%>
 </head>
 <body class="hold-transition skin-purple sidebar-mini">
 	<div class="wrapper">
@@ -27,7 +33,7 @@
 			<!-- Logo -->
 			<a href="index.jsp" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>商家</b></span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>商家</b>小助手</span>
+				<span class="logo-lg"><b>${applicationScope.market}商家</b>小助手${applicationScope.markid}</span>
 			</a>
 		</header>
 		<!-- 页面头部 /-->
