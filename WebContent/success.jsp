@@ -11,13 +11,19 @@
 <!-- 引入 WeUI -->
 <link rel="stylesheet"
 	href="https://res.wx.qq.com/open/libs/weui/2.1.3/weui.min.css">
+<%
+	if(application.getAttribute("markid")==null){
+		request.setAttribute("msg", "账号身份已过期，请重新登陆！");
+		request.getRequestDispatcher("login.jsp").forward(request, response);
+	}
+%>
 </head>
 <!-- 引入js文件 -->
 <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 <body ontouchstart>
 	<div class="weui-msg">
 		<div class="weui-msg__icon-area">
-			<i class="weui-icon-success weui-icon_msg"></i>
+			<i class="weui-icon-safe-success weui-icon_msg"></i>
 		</div>
 		<div class="weui-msg__text-area">
 			<h2 class="weui-msg__title">修改成功</h2>
@@ -33,7 +39,7 @@
 		</div>
 		<div class="weui-footer weui-footer_fixed-bottom">
 			<p class="weui-footer__links">
-				<a href="choose.jsp" class="weui-footer__link">首页</a>
+				<a href="index.jsp" class="weui-footer__link">首页</a>
 			</p>
 			<p class="weui-footer__text">Copyright © 2019 Jiang</p>
 		</div>
